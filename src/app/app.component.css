@@ -1,0 +1,520 @@
+/* Main container */
+.telehealth-home {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #021b2e, #002f4b, #005f87, #021b2e);
+    background-size: 800% 800%;
+    animation: gradientShift 20s ease infinite;
+  }
+  
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  /* Align all content (text + image) in center */
+  .hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    text-align: left;
+    z-index: 2;
+  }
+  
+  /* --- PHONE + GLOW --- */
+  .phone-wrapper {
+    /* position: relative;
+    width: 480px;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+
+  position: relative;
+  display: inline-block;
+    
+  }
+  
+  .glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,229,255,0.4) 0%, rgba(0,229,255,0) 70%);
+    box-shadow: 0 0 40px #00e5ff, 0 0 80px #00e5ff, 0 0 120px #00e5ff;
+    animation: pulseGlow 3s ease-in-out infinite;
+    z-index: 1;
+  }
+  
+  .phone {
+    /* position: relative;
+    z-index: 2; */
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  }
+  
+  .phone img {
+    width: 420px;
+    height: auto;
+    border-radius: 30px;
+    animation: float 4s ease-in-out infinite;
+    display: block; 
+  }
+  
+  /* --- TEXT CONTENT --- */
+  .content {
+    color: #fff;
+    max-width: 450px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00e5ff, #cce7ff);
+    /* -webkit-background-clip: text;  */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #00e5ff;
+  }
+  
+  .subtitle {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #cce7ff;
+    margin: 1rem 0 1.5rem;
+  }
+  
+  /* Feature cards row */
+  .feature-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 30px;
+  flex-wrap: wrap; 
+
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 30px; */
+  }
+  
+  .feature-card { 
+  padding: 18px 30px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: pulseCard 3s ease-in-out infinite;
+  text-align: center;       
+  white-space: normal;      
+  word-wrap: break-word;    
+  max-width: 200px;         
+
+
+  /* padding: 18px 30px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: pulseCard 3s ease-in-out infinite; */
+  
+  }
+
+  .two-line .break {
+  display: block;
+}
+
+
+  /* Sequential animation delays */
+.feature-card:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .feature-card:nth-child(2) {
+    animation-delay: 1s;
+  }
+  .feature-card:nth-child(3) {
+    animation-delay: 2s;
+  }
+
+  
+
+  /* Keyframes for zooming in/out */
+@keyframes pulseCard {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3);
+    }
+    50% {
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px rgba(0, 229, 255, 0.6);
+    }
+  }
+  
+  
+  .feature-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.6);
+  }
+  
+  /* --- ANIMATIONS --- */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 40px #00e5ff, 0 0 80px #00e5ff, 0 0 120px #00e5ff;
+    }
+    50% {
+      box-shadow: 0 0 60px #00e5ff, 0 0 100px #00e5ff, 0 0 150px #00e5ff;
+    }
+  }
+  
+  /* --- FLOATING ICONS --- */ 
+  .icon {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatIcons 6s ease-in-out infinite;
+    opacity: 0.8;
+    color: #00e5ff;
+  }
+  
+  .icon1 { top: 15%; left: 10%; animation-delay: 0s; }
+  .icon2 { top: 25%; left: 8%; animation-delay: 1s; }
+  .icon3 { bottom: 18%; left: 20%; animation-delay: 2s; }
+  .icon4 { bottom: 30%; right: 22%; animation-delay: 3s; }
+  .icon5 { top: 30%; right: 18%; animation-delay: 4s; }
+  .icon6 { bottom: 42%; right: 10%; animation-delay: 5s; }
+  .icon7 { top: 10%; right: 30%; animation-delay: 6s; }
+  .icon8 { bottom: 10%; left: 35%; animation-delay: 7s; }
+  .icon9 { top: 50%; left: 5%; animation-delay: 1.5s; }
+  .icon10 { top: 60%; right: 5%; animation-delay: 2.5s; }
+  .icon11 { top: 45%; right: 40%; animation-delay: 3.5s; }
+  .icon12 { bottom: 15%; right: 40%; animation-delay: 4.5s; }
+  
+  @keyframes floatIcons {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+    50% { transform: translateY(-15px) rotate(15deg); opacity: 1; }
+  }
+  
+  /* --- BACKGROUND ANIMATION --- */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(#00e5ff 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.05;
+    z-index: 1;
+    animation: moveParticles 30s linear infinite;
+  }
+  
+  @keyframes moveParticles {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 1000px; }
+  }
+  
+  /* --- RESPONSIVE --- */
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 2rem;
+    }
+  
+    .feature-cards {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+  
+  
+  .medical-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 0px;
+  width: 500px;
+  opacity: 0.4;
+  filter: drop-shadow(0 0 20px rgba(0,229,255,0.5));
+  /* animation: slowRotate 20s ease-in-out infinite;  */
+  animation: drift 12s ease-in-out infinite, breatheGlow 6s ease-in-out infinite; 
+  z-index: 2;
+  }
+  
+  @keyframes glowPulse {
+    0%, 100% { filter: drop-shadow(0 0 10px #00e5ff); opacity: 0.3; }
+    50% { filter: drop-shadow(0 0 25px #00e5ff); opacity: 0.6; }
+  }
+  
+  @keyframes slowRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes breatheGlow {
+    0%, 100% { opacity: 0.3; filter: drop-shadow(0 0 10px #00e5ff); }
+    50% { opacity: 0.6; filter: drop-shadow(0 0 30px #00e5ff); }
+  }
+
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, -10px); }
+    50% { transform: translate(5px, -5px); }
+    75% { transform: translate(-10px, 5px); }
+  }
+
+
+  /* ===== ECG Heartbeat Line ===== */
+.ecg-line {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-80%);
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(90deg, #00e5ff, transparent);
+    overflow: hidden;
+    opacity: 0.8;
+    z-index: 3;
+    cursor: pointer;
+  }
+  
+  .ecg-line::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 2px;
+    background: repeating-linear-gradient(
+      to right,
+      #00e5ff 0%,
+      #00e5ff 1%,
+      transparent 1.5%,
+      transparent 3%,
+      #00e5ff 4%,
+      #00e5ff 4.5%,
+      transparent 5%,
+      transparent 9%,
+      #00e5ff 10%
+    );
+    animation: ecgMove 2s linear infinite, ecgPulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 8px #00e5ff);
+    transition: all 0.6s ease;
+  }
+  
+  /* ECG motion - realistic speed */
+  @keyframes ecgMove {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Heartbeat pulse (brighter every few seconds) */
+  @keyframes ecgPulse {
+    0%, 90%, 100% {
+      filter: drop-shadow(0 0 8px #00e5ff);
+      opacity: 0.8;
+    }
+    95% {
+      filter: drop-shadow(0 0 20px #00ffff) brightness(1.5);
+      opacity: 1;
+    }
+  }
+  
+  /* Hover color change (cyan → pink) */
+  .ecg-line:hover::before {
+    background: repeating-linear-gradient(
+      to right,
+      #ff77ff 0%,
+      #ff77ff 1%,
+      transparent 1.5%,
+      transparent 3%,
+      #ff77ff 4%,
+      #ff77ff 4.5%,
+      transparent 5%,
+      transparent 9%,
+      #ff77ff 10%
+    );
+    filter: drop-shadow(0 0 15px #ff77ff);
+  }
+
+
+  /* ECG line */
+.ecg { position: absolute; left: 6%; bottom: 6%; width: 90%; }
+.ecg .stroke { stroke: rgba(142, 34, 34, 0.28); fill: none; stroke-width: 5.4; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawEcg 3s linear infinite; }
+@keyframes drawEcg { 0% { stroke-dashoffset: 1000; opacity: 0; } 40% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: -1000; opacity: 0; } }
+
+
+  /* Moving text banner (top of page) */
+.scrolling-text {
+  position: absolute;
+  top: 200px; /* add vertical space from the top */
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 3.3rem;
+  font-weight: 500;
+  color: #00e5ff;
+  /* text-shadow: 0 0 10px #7ad6e0;  */
+  /*00e5ff*/
+  z-index: 10;
+  animation: scrollText 20s linear infinite, textGlow 2s ease-in-out infinite alternate;
+  }
+  
+/* Continuous scrolling animation */
+@keyframes scrollText {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  /* Soft glow animation */
+  @keyframes textGlow {
+    0% { text-shadow: 0 0 10px #00e5ff; }
+    100% { text-shadow: 0 0 25px #00ffff; }
+  }
+
+  .bottom-text {
+    position: fixed;        /* stays at the bottom of the viewport */
+    bottom: 20px;           /* some space from the bottom */
+    left: 50%;              /* center horizontally */
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: #00e5ff;
+    opacity: 0.8;
+    letter-spacing: 0.5rem; /* spacing between arrows */
+    z-index: 1000;          /* above other content */
+    text-align: center;
+  }
+
+  .top-right-image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+}
+
+.top-right-image img {
+  width: 350px; /* adjust size */
+  height: 150px;
+  /*border-radius: 12px;  optional, for softer edges 
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5); subtle glow */
+}
+
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 450px; /* adjust to fit inside the screen area */
+  height: 450px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.mark {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 8px;
+  height: 20px;
+  background: #444;
+  transform-origin: center 225px;
+  transform: rotate(calc(var(--i) * 30deg));
+  border-radius: 3px;
+  animation: glow 60s linear infinite;
+  animation-delay: var(--delay);
+}
+
+/* Hand rotation */
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 4px;
+  height: 140px;
+  background: #00e5ff;
+  border-radius: 4px;
+  transform-origin: bottom center;
+  animation: rotateHand 60s linear infinite;
+  box-shadow: 0 0 8px #00e5ff;
+}
+
+/* Continuous rotation */
+@keyframes rotateHand {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Glow one by one */
+@keyframes glow {
+  0%, 95%, 100% {
+    background: #444;
+    box-shadow: none;
+  }
+  5% {
+    background: #00e5ff;
+    box-shadow: 0 0 12px #00e5ff;
+  }
+}
+
+.top-left-image {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.top-left-image img {
+  
+  width: 350px; /* adjust size */
+  height: 150px;
+  opacity: 0.9;  /* Optional */
+}
+
+ .medical-overlay2 {
+  position: absolute;
+  bottom: 40px;
+  right: 100px;
+  width: 800px;
+  height: 800px;
+  opacity: 0.4;
+  filter: drop-shadow(0 0 20px rgba(0,229,255,0.5));
+  /* animation: slowRotate 20s ease-in-out infinite;  */
+  animation: drift 12s ease-in-out infinite, breatheGlow 6s ease-in-out infinite; 
+  z-index: 2;
+  }
+
+
